@@ -20,7 +20,7 @@ function Logger(options) {
 		type: options.type || 'BSD',
 		pid: process.pid,
 		facility: options.facility || 'local0',
-		host: options.localhost || 'localhost';
+		host: options.localhost || 'localhost'
 	}); 
 };
 		
@@ -30,7 +30,7 @@ Logger.prototype.log = function log(level, msg, callback) {
 
 	var message = new Buffer(this.producer.produce({
 		severity: level,
-		appName: this.appName,
+		// appName: this.appName,
 		date: new Date(),
 		message: msg
 	}));
