@@ -17,8 +17,7 @@ function Logger(options) {
 
 	// Setup our Syslog and network members for later use.
 	this.producer = new glossy({
-		type: options.type || 'BSD',
-		pid: process.pid,
+		pid: String(process.pid),
 		facility: options.facility || 'local0',
 		host: options.localhost || 'localhost'
 	}); 
